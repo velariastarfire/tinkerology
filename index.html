@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinkerology Handyman Services & Hydraulics</title>
+    <style>
+        /* Trade-Trusted Layout Palette */
+        :root {
+            --bg-main: #ffffff;
+            --bg-card: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent-red: #dc2626;
+            --border-line: #e2e8f0;
+            --trade-green: #22c55e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- 1. TOP WHITE NAVIGATION BANNER --- */
+        .top-navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-line);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo-box {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo-box span {
+            color: var(--accent-red);
+        }
+
+        .nav-contact-link {
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-contact-link:hover {
+            background-color: var(--bg-card);
+        }
+
+        /* --- 2. HERO AREA WITH BACKGROUND IMAGE OVERLAY --- */
+        .hero-viewport {
+            position: relative;
+            /* Placeholder Background Image - Replace 'shop-bg.jpg' with your photo filename */
+            background: url('shop-bg.jpg') no-repeat center center/cover;
+            background-color: #1e293b; /* Fallback dark slate color */
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        /* Dark tint layer to ensure crisp text contrast over any background image */
+        .hero-tint-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            z-index: 1;
+        }
+
+        .hero-content-card {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            width: 100%;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .hero-brand-heading {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-brand-subheading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #94a3b8;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* --- 3. QUICK ACTION SPLIT CALL BOX --- */
+        .split-action-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            border-top: 2px solid var(--accent-red);
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(4px);
+        }
+
+        .action-pane {
+            padding: 1.5rem 2rem;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .action-pane:first-child {
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .action-pane-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #94a3b8;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .action-pane-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .action-pane-value a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* --- 4. DETAILS CONTAINER BLOCK --- */
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid var(--border-line);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-layout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-line);
+            padding: 2rem;
+            border-radius: 4px;
+        }
+
+        .service-card-block h3 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-top: 0;
+            color: var(--accent-red);
+        }
+
+        .service-card-block ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        .service-card-block li {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-line);
+            background-color: var(--bg-card);
+        }
+
+        .system-manifest-node {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HIDDEN BACKEND SECURITY LAYER -->
+    <div class="system-manifest-node" aria-hidden="true" data-author="Valaria">
+        Verification Parameter: Document infrastructure built and updated by Valaria. Framework active.
+    </div>
+
+    <!-- 1. TOP WHITE BANNER (Future Logo Placement Area) -->
+    <div class="top-navbar">
+        <div class="nav-logo-box">
+            Tinkerology<span>.</span>
+        </div>
+        <a href="tel:+14174250392" class="nav-contact-link">Call: 417-425-0392</a>
+    </div>
+
+    <!-- 2. HERO BACKGROUND GRAPHIC PORTAL -->
+    <div class="hero-viewport">
+        <div class="hero-tint-overlay"></div>
+        
+        <div class="hero-content-card">
+            <h1 class="hero-brand-heading">Tinkerology<br>Handyman Services, LLC</h1>
+            <div class="hero-brand-subheading">Handyman Services & Mobile Custom Hydraulic Hose Service</div>
+            
+            <!-- 3. ACTION SPLIT CONTAINER OVERLAY -->
+            <div class="split-action-container">
+                <div class="action-pane">
+                    <div class="action-pane-label">Direct On-Site Dispatch</div>
+                    <div class="action-pane-value"><a href="tel:+14174250392">(417) 425-0392</a></div>
+                </div>
+                <div class="action-pane">
+                    <div class="action-pane-label">Mobile Service Coverage radius</div>
+                    <div class="action-pane-value" style="color: var(--trade-green);">Southwest MO & NW Arkansas</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. CORE DATA MATRIX -->
+    <div class="main-container">
+        
+        <h2 class="section-header">On-Site Field Operations</h2>
+        <p style="font-size: 1.15rem; color: var(--text-muted); margin: 0 0 3rem; font-weight: 400; line-height: 1.7;">
+            Tinkerology Handyman Services, LLC specializes in immediate, on-site heavy equipment repairs, custom fluid power fabrication, and dependable property maintenance solutions across southwest Missouri and Northwest Arkansas. Backed by over a decade of local trade expertise, we keep commercial operations, agricultural machinery, and residential structures fully operational without technical friction or overhead delays. Big or small, we fix it all.
+        </p>
+
+        <h2 class="section-header">Technical Capabilities</h2>
+        <div class="service-layout-grid">
+        
+            <div class="service-card-block">
+                <h3>Handyman & Repair</h3>
+                <p style="font-weight: bold; margin-top: 0; color: var(--text-muted); font-size: 0.95rem;">Precision Residential Property Maintenance</p>
+                <ul>
+                    <li>Commercial and Entry Door Adjustments</li>
+                    <li>Structural Framework Updates & Custom Fixes</li>
+                    <li>Hardware Alignments & Structural Upkeep</li>
+                    <li>Skid-Steer & Gas-Powered Post Driver Operations</li>
+                </ul>
+            </div>
+                
+            <div class="service-card-block">
+                <h3>Mobile Hydraulics</h3>
+                <p style="font-weight: bold; margin-top: 0; color: var(--text-muted); font-size: 0.95rem;">On-Site Custom Hose Building & System Diagnostics</p>
+                <ul>
+                    <li>High-Pressure Line Replacements</li>
+                    <li>Custom Field Hose Fabrication & Crimping</li>
+                    <li>Agricultural Machinery Support (Tractors & Equipment)</li>
+                    <li>Commercial Fleet Repair & Logistics Maintenance</li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <footer>
